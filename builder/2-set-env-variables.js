@@ -18,3 +18,7 @@ var xScale = d3.scaleBand().domain([1,2,3,4,5,6,7]) // Use .map function on our 
 				.rangeRound([0,width])
 				.paddingInner(0.05);
 
+// Define the axes as well
+// The x & y axes.
+var xAxis = d3.axisBottom(xScale).ticks(12, d3.format(",d")),
+    yAxis = d3.axisLeft(yScale);
