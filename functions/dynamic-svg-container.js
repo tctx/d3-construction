@@ -1,5 +1,6 @@
 // Take some array that we want to use with D3
 // Assume that each object in the array has properties x_axis, y_axis, width, and height
+// Example --> { "x_axis": 50, "y_axis": 100, "height": 30, "width":20, "color" : "blue" }
 var yourArray = [];
  
 // Define variables for max x value and max y value that will be generated using yourArray
