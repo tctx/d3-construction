@@ -11,15 +11,12 @@ var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
 // We use domain and range to essentially ensure that our data maps well to however we defined the svg (eg L x W)
 // Pro tip: double check that scale funtions match D3 v4 convention as the namespace changed from v3-->v4
 
-// Optionally (when appropriate), we can dynamically set our xScale domain by pushing the position of each array 
-var dataDomain = [];
-var xDomain = data.map(function(i){return dataDomain.push(i); });
-
 // Here we will use our max data point and map it to 
 var yScale = d3.scaleLinear()
 				.domain([0, d3.max(data)])
 				.range([height, 0]);
-var xScale = d3.scaleBand().domain(xDomain) // Optionally use .map function above on our data to determine domain 
+// This particular scale is for a bar chart, and we can simply update the scale function depending our our data set
+var xScale = d3.scaleBand().domain(d3.range(data.length)) // Use range function and length of data set to pass a domain
 				.rangeRound([0,width])
 				.paddingInner(0.05);
 
